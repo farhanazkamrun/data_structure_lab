@@ -1,0 +1,130 @@
+#include<iostream>
+#include<string>
+
+using namespace std;
+
+struct student{
+
+   string name;
+
+   int studentID, semester_completed, credits_completed;
+
+   float CGPA;
+
+};
+
+int main() {
+
+{
+    student s1[10];
+
+    s1[1].name= "Farha";
+
+    s1[1].studentID= 22-46390-1;
+
+    s1[1].semester_completed= 6;
+
+    s1[1].credits_completed= 60;
+
+    s1[1].CGPA= 3.5;
+
+ 
+
+    s1[2].name= "Omi";
+
+    s1[2].studentID= 22-46300-1;
+
+    s1[2].semester_completed= 8;
+
+    s1[2].credits_completed= 55;
+
+    s1[2].CGPA= 3.35;
+
+ 
+
+    s1[3].name= "Taspia";
+
+    s1[3].studentID= 22-47990-1;
+
+    s1[3].semester_completed= 4;
+
+    s1[3].credits_completed= 40;
+
+    s1[3].CGPA= 3.8;
+
+ 
+
+    s1[4].name= "Enan";
+
+    s1[4].studentID= 22-47500-1;
+
+    s1[4].semester_completed= 7;
+
+    s1[4].credits_completed= 70;
+
+    s1[4].CGPA= 3.95;
+
+ 
+
+    s1[5].name= "Bushra";
+
+    s1[5].studentID= 22-47990-1;
+
+    s1[5].semester_completed= 8;
+
+    s1[5].credits_completed= 72;
+
+    s1[5].CGPA= 2.80;
+
+ 
+
+    s1[6].name= "Oishee";
+
+    s1[6].studentID= 22-48362-1;
+
+    s1[6].semester_completed= 4;
+
+    s1[6].credits_completed= 40;
+
+    s1[6].CGPA= 3.33;
+
+ 
+
+    s1[7].name= "Alin";
+
+    s1[7].studentID= 22-47990-1;
+
+    s1[7].semester_completed= 4;
+
+    s1[7].credits_completed= 40;
+
+    s1[7].CGPA= 3.8;
+
+ 
+
+    s1[8].name= "Mayad";
+
+    s1[8].studentID= 22-47990-1;
+
+    s1[8].semester_completed= 6;
+
+    s1[8].credits_completed= 75;
+
+    s1[8].CGPA= 4.0;
+
+ 
+
+    s1[9].name= "Raj";
+
+    s1[9].studentID= 22-47990-1;
+
+    s1[9].semester_completed= 4;
+
+    s1[9].credits_completed= 40;
+
+    s1[9].CGPA= 3.8;
+
+}
+
+return 0;
+}
