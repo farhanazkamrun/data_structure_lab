@@ -1,0 +1,121 @@
+#include <iostream>
+#include <string>
+using namespace std;
+string encode( string s, int j) 
+{
+    string encoded ;
+    for (int i = 0; i < s.length(); ++i) {
+        if (i < j) {
+            encoded =encoded+s[i];
+        } else {
+            encoded =encoded+char(s[i] + 3);
+        }
+
+struct BankAccount {
+    int accountNumber;
+    string accountHolderName;
+    double accountBalance;
+};
+
+
+BankAccount createAccount() {
+    BankAccount account;
+    cout << "Enter Account Number: ";
+    cin >> account.accountNumber;
+    cout << "Enter Account Holder's Name: ";
+    cin.ignore();
+    getline(cin, account.accountHolderName);
+    cout << "Enter Initial Account Balance: ";
+    cin >> account.accountBalance;
+    return account;
+}
+
+
+void depositMoney(BankAccount account, double amount) {
+    if (amount > 0) {
+        account.accountBalance += amount;
+        cout << "Deposited $" << amount << " into the account." << endl;
+    } else {
+        cout << "Invalid deposit amount. Please enter a positive amount." << endl;
+    }
+    return encoded;
+}
+
+string decode(string encoded_str, int j) {
+    string decoded ;
+    for (int i = 0; i < encoded_str.length(); ++i) {
+        if (i < j) {
+            decoded =decoded + encoded_str[i];
+        } else {
+            decoded =decoded + char(encoded_str[i] - 3);
+        }
+
+void withdrawMoney(BankAccount &account, double amount) {
+    if (amount > 0 && amount <= account.accountBalance) {
+        account.accountBalance -= amount;
+        cout << "Withdrawn " << amount << " from the account." << endl;
+    } else {
+        cout << "Invalid withdrawal amount or insufficient balance." << endl;
+    }
+    return decoded;
+}
+
+
+void displayAccountDetails(const BankAccount &account) {
+    cout << "Account Number: " << account.accountNumber << endl;
+    cout << "Account Holder's Name: " << account.accountHolderName << endl;
+    cout << "Account Balance: $" << account.accountBalance << endl;
+}
+
+int main() {
+    string sample_string = "I am a student";
+    int sample_integer = 2;
+    BankAccount account;
+
+
+    string encoded_string = encode(sample_string, sample_integer);
+    cout << "Encoded String: " << encoded_string <<endl;
+
+    account = createAccount();
+
+   string decoded_string = decode(encoded_string, sample_integer);
+   cout << "Decoded String: " << decoded_string <<endl;
+    while (true) {
+        cout << "\nMenu:\n";
+        cout << "1. Deposit Money\n";
+        cout << "2. Withdraw Money\n";
+        cout << "3. Display Account Details\n";
+        cout << "4. Exit\n";
+        cout << "Enter your choice: ";
+
+        int choice;
+        cin >> choice;
+
+        switch (choice) {
+            case 1: {
+                double amount;
+                cout << "Enter the amount to deposit: ";
+                cin >> amount;
+                depositMoney(account, amount);
+                break;
+            }
+            case 2: {
+                double amount;
+                cout << "Enter the amount to withdraw: ";
+                cin >> amount;
+                withdrawMoney(account, amount);
+                break;
+            }
+            case 3:
+                displayAccountDetails(account);
+                break;
+            case 4:
+                cout << " Goodbye!\n";
+                return 0;
+
+        }
+    }
+
+    return 0;
+  }
+ 
