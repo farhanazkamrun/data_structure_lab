@@ -1,0 +1,61 @@
+#include <iostream>
+
+using namespace std;
+
+const int MAX_ELEMENTS = 50;
+
+void removeLowestElement(int stack[], int& size) {
+    if (size == 0) {
+        cout << "Stack is empty." << endl;
+        return;
+    }
+
+    int maxPossible = 100000; // Assuming a maximum value
+    int lowest = maxPossible;
+    int lowestIndex = -1;
+
+    for (int i = 0; i < size; ++i) {
+        if (stack[i] < lowest) {
+            lowest = stack[i];
+            lowestIndex = i;
+        }
+    }
+
+    if (lowestIndex != -1) {
+        for (int i = lowestIndex; i < size - 1; ++i) {
+            stack[i] = stack[i + 1];
+        }
+        size--;
+    }
+}
+
+int main() {
+    int stackElements[MAX_ELEMENTS];
+    int size = 0;
+
+    int numElements;
+    cout << "Enter the number of elements to push onto the stack: ";
+    cin >> numElements;
+
+    cout << "Enter the elements: ";
+    for (int i = 0; i < numElements && size < MAX_ELEMENTS; ++i) {
+        cin >> stackElements[size++];
+    }
+
+    cout << "Stack elements are: ";
+    for (int i = 0; i < size; ++i) {
+        cout << stackElements[i] << " ";
+    }
+    cout << endl;
+
+    // Find and remove the lowest element
+    removeLowestElement(stackElements, size);
+
+    cout << "Stack elements after removing the lowest element: ";
+    for (int i = 0; i < size; ++i) {
+        cout << stackElements[i] << " ";
+    }
+    cout << endl;
+
+    return 0;
+}
